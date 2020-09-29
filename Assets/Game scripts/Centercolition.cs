@@ -10,7 +10,11 @@ public class Centercolition : MonoBehaviour
     public GameObject enterTextB;
     public GameObject enterTextC;
     public GameObject enterTextD;
-    
+
+    public GameObject exitTextA;
+    public GameObject exitTextB;
+    public GameObject exitTextC;
+    public GameObject exitTextD;
 
     void Start()
     {
@@ -19,6 +23,10 @@ public class Centercolition : MonoBehaviour
         enterTextC.SetActive(false);
         enterTextD.SetActive(false);
     
+        exitTextA.SetActive(false); 
+        exitTextB.SetActive(false); 
+        exitTextC.SetActive(false); 
+        exitTextD.SetActive(false);
 
     }
 
@@ -33,22 +41,47 @@ public class Centercolition : MonoBehaviour
         if(carda.gameObject.tag == "Card A")
         {
             enterTextA.SetActive(true);
+            exitTextA.SetActive(false);
         }
         if (carda.gameObject.tag == "Card B")
         {
             enterTextB.SetActive(true);
+            exitTextB.SetActive(false);
         }
         if (carda.gameObject.tag == "Card C")
         {
             enterTextC.SetActive(true);
+            exitTextC.SetActive(false);
         }
         if (carda.gameObject.tag == "Card D")
         {
             enterTextD.SetActive(true);
+            exitTextD.SetActive(false);
         }
-        
     }
 
-
+    private void OnTriggerExit2D(Collider2D carda)
+    {
+        if (carda.gameObject.tag == "Card A")
+        {
+            enterTextA.SetActive(false);
+            exitTextA.SetActive(true);
+        }
+        if (carda.gameObject.tag == "Card B")
+        {
+            enterTextB.SetActive(false);
+            exitTextB.SetActive(true);
+        }
+        if (carda.gameObject.tag == "Card C")
+        {
+            enterTextC.SetActive(false);
+            exitTextC.SetActive(true);
+        }
+        if (carda.gameObject.tag == "Card D")
+        {
+            enterTextD.SetActive(false);
+            exitTextD.SetActive(true);
+        }
+    }
 
 }
