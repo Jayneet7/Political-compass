@@ -15,6 +15,11 @@ public class Centercolition : MonoBehaviour
     public GameObject exitTextB;
     public GameObject exitTextC;
     public GameObject exitTextD;
+    
+    
+    public GameObject selectcard;
+
+    public bool allin = false;
 
     void Start()
     {
@@ -22,6 +27,7 @@ public class Centercolition : MonoBehaviour
         enterTextB.SetActive(false);
         enterTextC.SetActive(false);
         enterTextD.SetActive(false);
+        
     
         exitTextA.SetActive(false); 
         exitTextB.SetActive(false); 
@@ -32,6 +38,11 @@ public class Centercolition : MonoBehaviour
 
     private void Update()
     {
+        if (allin == false)
+        {
+            
+            selectcard.SetActive(true);
+        }
         
     }
 
@@ -57,13 +68,14 @@ public class Centercolition : MonoBehaviour
         {
             enterTextD.SetActive(true);
             exitTextD.SetActive(false);
+            allin = false;
         }
     }
 
     private void OnTriggerExit2D(Collider2D carda)
     {
         if (carda.gameObject.tag == "Card A")
-        {
+        {    
             enterTextA.SetActive(false);
             exitTextA.SetActive(true);
         }
@@ -81,6 +93,7 @@ public class Centercolition : MonoBehaviour
         {
             enterTextD.SetActive(false);
             exitTextD.SetActive(true);
+
         }
     }
 

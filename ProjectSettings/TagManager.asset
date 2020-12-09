@@ -8,6 +8,8 @@ TagManager:
   - Card B
   - Card C
   - Card D
+  - Enemy
+  - KILL
   layers:
   - Default
   - TransparentFX

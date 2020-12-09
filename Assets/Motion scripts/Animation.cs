@@ -4,7 +4,17 @@ using UnityEngine;
 
 public class Animation : MonoBehaviour
 {
-    public GameObject Redcard;
+    public GameObject redcard;
+    public GameObject bluecard;
+    public GameObject greencard;
+    public GameObject purplecard;
+    public GameObject ecoscale;
+    public GameObject socscale;
+    
+    
+
+
+    public GameObject Hidebutton;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +29,12 @@ public class Animation : MonoBehaviour
 
     public void pressbutton() 
     {
-        LeanTween.move(Redcard,new Vector3 (1682, 905, 0),2.0f);
+        LeanTween.move(redcard,new Vector3 (-350, 250, 0),2.0f);
+        LeanTween.move(bluecard,new Vector3 (350, 250, 0),2.0f);
+        LeanTween.move(greencard,new Vector3 (-350, -250, 0),2.0f);
+        LeanTween.move(purplecard,new Vector3 (350, -250, 0),2.0f);
+        LeanTween.move(ecoscale,new Vector3 (0, 0, 0),2.0f);
+        LeanTween.move(socscale,new Vector3 (0, -0, 0),2.0f);
+        Hidebutton.SetActive(false);
     }
 }
